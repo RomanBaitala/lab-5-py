@@ -137,21 +137,6 @@ class Pharmacy:
         :return:
         """
         sorted_list = sorted(self.medicines, key=lambda medicine: medicine.get_price())
-        # return sorted_list
-        # cheapest_med = []
-        # if len(self.medicines) == 0:
-        #     return "The pharmacy list is empty!"
-        #
-        # while True:
-        #     prices_arr = []
-        #     for med in self.medicines:
-        #         prices_arr.append(med.get_price())
-        #         prices_arr.sort()
-        #         i = 0
-        #         for price in prices_arr:
-        #             if price == med.get_price():
-        #                 cheapest_med.insert(i, med.__str__())
-        #             i += 1
 
         if len(self.medicines) == len(sorted_list):
             for el in sorted_list:
@@ -196,14 +181,6 @@ class Pharmacy:
             if med.expiration_date():
                 self.medicines.remove(med)
 
-    # def __str__(self):
-    #     """
-    #     The func returns object in str format
-    #     :return:
-    #     """
-    #     return super().__str__()
-
-
 if __name__ == "__main__":
     paracetamol = Medicine(109, 10, 'paracetamol', True, datetime.date(2024, 6, 10))
     ibuprofen = Medicine(50, 100, 'ibuprofen', False, datetime.date(2024, 6, 11))
@@ -212,7 +189,6 @@ if __name__ == "__main__":
     inulin2 = Medicine(745, 100, 'inulin', False, datetime.date(2022, 6, 11))
     inulin3 = Medicine(750, 100, 'inulin', False, datetime.date(2022, 6, 11))
     inulin4 = Medicine(740, 100, 'inulin', False, datetime.date(2022, 6, 11))
-    # print(paracetamol)
 
     pharmacy = Pharmacy()
     pharmacy.add_medicine(paracetamol)
