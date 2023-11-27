@@ -1,7 +1,7 @@
 """
 datatime import
 """
-import datetime
+from datetime import date
 
 
 class Medicine:
@@ -10,7 +10,7 @@ class Medicine:
     """
 
     def __init__(self, price=0, quantity=0, name="", is_prescription_needed=True,
-                 expiration_date=datetime.date.today()):
+                 expiration_date=date.today()):
         """
         Class constructor
         :param price: price of medicine (float)
@@ -30,7 +30,7 @@ class Medicine:
         The func is checking if medicine is expired
         :return: boolean
         """
-        today_day = datetime.date.today()
+        today_day = date.today()
         return self._expiration_date < today_day
 
     def get_price(self):
@@ -182,13 +182,13 @@ class Pharmacy:
                 self.medicines.remove(med)
 
 if __name__ == "__main__":
-    paracetamol = Medicine(109, 10, 'paracetamol', True, datetime.date(2024, 6, 10))
-    ibuprofen = Medicine(50, 100, 'ibuprofen', False, datetime.date(2024, 6, 11))
-    inulin = Medicine(70, 100, 'inulin', False, datetime.date(2022, 6, 11))
-    inulin1 = Medicine(4545, 100, 'inulin', False, datetime.date(2022, 6, 11))
-    inulin2 = Medicine(745, 100, 'inulin', False, datetime.date(2022, 6, 11))
-    inulin3 = Medicine(750, 100, 'inulin', False, datetime.date(2022, 6, 11))
-    inulin4 = Medicine(740, 100, 'inulin', False, datetime.date(2022, 6, 11))
+    paracetamol = Medicine(109, 10, 'paracetamol', True, date(2024, 6, 10))
+    ibuprofen = Medicine(50, 100, 'ibuprofen', False, date(2024, 6, 11))
+    inulin = Medicine(70, 100, 'inulin', False, date(2022, 6, 11))
+    inulin1 = Medicine(4545, 100, 'inulin', False, date(2022, 6, 11))
+    inulin2 = Medicine(745, 100, 'inulin', False, date(2022, 6, 11))
+    inulin3 = Medicine(750, 100, 'inulin', False, date(2022, 6, 11))
+    inulin4 = Medicine(740, 100, 'inulin', False, date(2022, 6, 11))
 
     pharmacy = Pharmacy()
     pharmacy.add_medicine(paracetamol)
